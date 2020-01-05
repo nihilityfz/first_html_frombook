@@ -1,0 +1,37 @@
+<html>
+    <head>
+        
+    </head>
+    <frameset rows="60,*,100" frameborder = "yes" framespacing="8"> <!--三部分分别是顶层高度，中层高度，底层高度  *表示通配符，指除了其余部分的剩余部分-->
+        <!--
+            frameset标签的属性
+            rows    设置框架集中包含框架的行数，以及对应的高度
+            cols    设置框架集中包含框架的列数，以及对应的宽度
+            frameboder 边框是否显示 0,1 或者yes no
+            bordercolor 设置框架集边框的颜色
+            framespacing  框架与框架之间的空白距离
+        -->
+        <frame src="topFrame.html"/>
+        <!--框架的属性
+            ps：既可以使用单标签也可以使用双标签的形式
+            src——指定一个资源路径
+            name，id 给框架命名
+
+            框架的属性
+            name 框架的名称，设置超链接时用作框架的标记
+            src  设置在框架中显示页面的url
+            frameborder 设置框架的边框是否显示，取值为0或1
+            marginheight  定义内容与框架的上下边缘高度，默认为1
+            marginwidth 定义内容与框架的左右边缘宽度 默认为1
+            scrolling   设置框架中是否显示滚动条，取值为yes，no，auto
+            noresize     设置框架不能调整大小值只有noresize一个
+        -->
+        <frame src="mainFrame.html"/>
+        <frame src="bottomFrame.html"/>
+    </frameset>
+    <noframes>
+      <body>
+          该浏览器不支持框架集
+      </body>
+    </noframes>
+</html>
