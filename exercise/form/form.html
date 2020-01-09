@@ -3,8 +3,12 @@
 
     </head>
     <body>
-        <form action="处理程序的url地址" method="get|post" name="表单名称">
-            <!--
+        <!--表单标签-->
+        
+            <!--3.2.1 form的属性值-->
+                <!--
+                具体格式:
+                <form action="处理程序的url地址" method="get|post" name="表单名称">
                 action method name 是常用的三个属性
                 action 属性用于指定服务器端用来处理表单程序的URL地址，当表单提交时，
                 使用action属性指定的服务器端程序来处理数据，多用于动态交互性网站开发
@@ -14,8 +18,8 @@
                 action 当提交表单时，说明向何处发送表单的数据
                 accept 服务器能够处理的内容类型的列表，用逗号隔开，目前主流技术并不支持且在html5中不支持
                 accept—charset 服务器可以处理的表单数据字符集
-                enctype 表单数据内容类型，说明在发送表单数据之前如何对其进行编码，取值可以为application/x-www-form-urlencoded
-                multipart/form-data text/plain
+                enctype 表单数据内容类型，说明在发送表单数据之前如何对其进行编码，取值可以为
+                application/x-www-form-urlencoded、multipart/form-data text/plain
 
                 id设置表单的唯一标识符
                 name设置表单对象的名称
@@ -26,9 +30,15 @@
 
             -->
 
-            
+            <!--3.2.2常用属性详解-->
             <!--
-                method
+                1.action
+                action是Web服务器上数据处理程序的URL地址，或者是Email
+                <form action="http://www.itshixun.com/web/login.jsp"></form>
+                <form action="/web/login.jsp"></form>
+                <form action="mailto:12345@tengxun.com"></form>
+
+                2.method
                 get方式的URL传递数据
                 http://www.itshixun.com/web/login.jsp?userName=guoqy&userPwd=123456
 
@@ -39,7 +49,112 @@
 
                 PS:get方式的请求数据可以被缓存，能够保留在浏览器历史记录中，还能作为书签被收藏。
                 由于数据会出现在URL中，所以安全性比较低，url地址栏长度有限，最长不超过255个字符，所以有长度限制
+
+
+                3.id与name属性
+                id是表单在网页中的唯一标识。
+                name设置的是表单的名称，也应该尽量唯一
+
+                4.enctype
+                用来说明表单中数据编码的方式
+                有三种格式application/x-www-form-urlencoded、multipart/form-data和text/plain
+
+                5.target
+                在html中用，在之后的html中很少用和不支持，html中用formtarget来代替
             -->
+
+
+
+            <!--3.3 表单域-->
+            <!--
+                大部分表单域使用<input>创建
+                除了多行文本框<textarea>和列表选择框<select>
+                
+                <input>标签的通用属性如下
+                id 设置当前控件的唯一ID，界面设计时，可以在CSS，Javascript中可以引用
+                name 设置当前的控件的名称，在向服务器发送的数据时，服务器根据name属性获取对应表单域的值
+                value 设置表单域的初始值，网页加载过程中，默认显示该值
+                type  必须的，用来说明当前控件的类型
+                        取值可以是text,passsword,radio,checkbox,file,hidden,button,submit,reset,image
+                maxlength 设置最大字符数，超过之后用户再按下按键也不会添加新的字符
+                size      设置文本输入控件的宽度。单位为字符
+            -->
+
+            <!--3.3.1单行文本框-->
+            <!--
+                3.3.1单行文本框
+                常用将<input>标签的type属性设置为text来创建一个单行文本框
+                具体语法：
+                <input type="text" name="" size="" maxlength="" value="" disabled=""readonly="readonly"/>
+                size 指定文本框的宽度，单位是字符
+                maxlength 指定最多输入字符的个数
+                value 指定文本的初始值
+                disabled 指明文本框的禁用状态，并呈灰色显示
+                readonly="readonly" 指定文本框处于只读状态
+            -->
+            <form>
+                <input type="text"/><br/><br/>
+                <input type="text" name="userName" id="userName" value="请输入用户名"/><br/><br/>
+                <input type="text" value="请输入用户名" size="25" maxlength="10"/><br/><br/>
+                <input type="text" value="请输入用户名" disabled="disabled"/><br/><br/>
+                <input type="text" value="请输入用户名" readonly="readonly"/><br/><br/>
+            </form>
+
+            <!--
+                3.3.2密码框
+                语法
+                <input type="password" name="" size="" maxlength="" value=""/>
+                以掩码的方式进行显示
+            -->
+        <form>
+            用 户 名：    <input type="text" name="userName" id="userName" value="请输入用户名"/><br/><br/>
+            密    码：    <input type="password" name="userPwd" id="userPwd"><br/><br/>
+            确 认 密 码:   <input type="password" name="userRePwd" id="userRePwd" size="25" disabled="disabled"
+                       value="请输入确认密码"/><br/><br/>
         </form>
+        <!--
+            3.3.3单选按钮
+            <input type="radio" name="" value="" checked="checked"/>
+            checked="checked" 用于指定该选项被选中，也可以简写成checked模式
+        -->
+        <form>
+            性别： <input type="radio" name="sex" value="man" check="checked"/>男
+                   <input type="radio" name="sex" value="woman"/> 女<br/>
+            专业： <input type="radio" name="major" value="computer"/>计算机
+                   <input type="radio" name="major" value="physics" checked/>物理
+        </form>
+        <!--
+            3.3.4复选按钮
+            <input type="checkbox" name="" value="" checked="checked"/>
+        -->
+        <form>
+        爱好： <input type="checkbox" name="hobby" value="music"/>音乐
+                <input type="checkbox" name="hobby" value="swimming"/>游泳
+                <input type="checkbox" name="hobby" value="football" checked/>足球<br/>
+        选修： <input type="checkbox" name="choice" value="computer" checked/>计算机
+                <input type="checkbox" name="choice" value="physics"/>物理
+                <input type="checkbox" name="choice" value="chemical"/>化学
+        </form>
+        <!--
+            3.3.5文件选择框
+            <input type="file" name="" accept=""/>
+            accepyt 用于指定文件选择窗口的文件类型过滤
+
+            使用文本选择框是，表单的enctype属性设置为multipart/form-data，method设置为post
+        -->
+        <form method="POST" enctype="multipart/form-data">
+            请上传你的头像：<input type="file" accept="image/*" name="headImage"/>
+        </form>
+        <!--
+            3.3.6隐藏域
+            <input type="hidden" name="" value=""/>
+        -->
+        <form>
+            <input type="hidden" name="hiddenData" value="不显示的数据"/>
+        </form>
+        <!--
+            3.3.7 多行文本框
+            
+        -->
     </body>
 </html>
