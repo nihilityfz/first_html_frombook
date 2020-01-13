@@ -1,0 +1,31 @@
+<!--
+    除了链接通过link链接外部样式表以外
+    还可以导入样式表。
+    相当于将一个外部样式表导入到内部的位置
+    方式为
+    @import style.css；尽支持ie，谷歌和火狐不支持
+    @import url（“style.css”)    都支持
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/css,charset=utf-8"/>
+        <title>导入外部样式表的使用</title>
+        <style type="text/css">
+            @import url("style.css");
+            body{
+                background-color:#FCF;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>导入外部样式表</h1>
+        <hr/>
+            和link之间的区别<br/>
+            1.@import只能引入css，link除了CSS样式文件外还可以链接其他类型的文件】<br/>
+            2.加载时间和顺序不一样。link先加载css，然后进行编译显示。@import先显示html然后进行渲染<br/>
+              当css比较大时，可能先显示无css时的效果，然后再渲染界面<br/>
+            3.兼容性不同。@import支持ie5以上的版本 link没有这类限制<br/>
+            4.dom无法控制@import但是可以控制link<br/>
+        <hr/>
+    </body>
+</html>

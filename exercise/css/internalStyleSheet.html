@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <style type="text/css">
+        <!--
+            /*h1标签的样式声明*/
+            h1{
+                color:#033;
+                border:dashed 1px #6600cc
+            }
+            /*hr的样式声明*/
+            hr{
+                width:95%;
+                text-align: center;
+                color: #03c;
+            }
+            /*span标签的样式声明*/
+            span{
+                font-weight:bold;
+            }
+        -->  /* <!---->术语html的注释，当低版本的浏览器不能识别<style>标签是，浏览器会自动忽略该标签中的内容
+                css样式表中的注释和C语言中的一大段注释一样（这段话用得就是） */
+        </style>
+    </head>
+    <body>
+        <h1>内部样式表的使用</h1>
+        <hr/>
+        有些低版本的浏览器不能使用style标记，会忽略style的内容，将其中的内容直接显示在网页上，
+        所以用html的注释标记在外面注释一下让他们忽略,用（<span>&lt;!--注释--&gt;</span>）
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/css,charset=utf-8"/>
+        <title>组合选择器的使用</title>
+        <style>
+            /*多元素选择器*/
+            p,div{
+                font-size: 14px;
+                color: blue;
+            }
+            /*后代选择器，又称包含选择器*/
+            div p{
+                background-color:#CCC;
+            }
+            /*子选择器 选取直接子元素，间接子元素不适用*/
+            div>p{
+                font-weight:bold;
+                border:solid;
+            }
+        </style>
+    </head>
+    <body>
+        <h4>组合选择器的使用</h4>
+        <hr/>
+        <p>多元素选择器用于选择多个元素</p>
+        <span>hello</span>
+        <hr/>
+        <div>
+            <p>在后代选择器中，上下代之间用空格隔开</p>
+            <span>后代选择器的功能非常强大<p>他能把很多html中不能实现的</p></span>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+@charset "utf-8";
+/*h1标签的样式声明*/
+
+h1{
+    color: #033;
+    border:dashed 1px #6600cc;
+}
+/*hr的样式声明*/
+hr{
+    width:95%;
+    text-align: center;
+    color: #03c;
+}
+/*span 标签的样式声明*/
+span{
+    font-weight:bold;
+}
