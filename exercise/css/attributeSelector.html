@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/css,charset=utf-8"/>
+        <title>属性选择器</title>
+        <style>
+            p[id]{
+                font-size: 14px;
+            }
+            p[name="teaName"]{
+                font-weight:bold;
+            }
+            p[name~="stu"]{
+                color:red;
+            }
+            p[lang|="zh"]{
+                background-color:#666;
+            }
+            p[title^="j"]{
+                font-size:12px;
+            }
+            p[title*="e"]{
+                background-color: #999;
+            }
+            p[title$="o"]{
+                color:#603;
+                font-size:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>属性选择器</h3>
+        <hr/>
+        <p id="description">属性选择器可以通过标签的属性来选择元素</p>
+        <p name="teaName">教师通过案例的方式讲解相等选择器</p>
+        <p name="stu zhangsan">张三在学习完毕后，能够独立的完成包含选择器</p>
+        <p name="stu lisi">李四课后在张三的帮助下完成了练习任务</p>
+        <hr/>
+        <p lang="zh">中国是一个以汉族为主体的统一的多民族国家</p>
+        <p lang="zh-TW">台湾位于中国大陆东南沿海的大陆架上，东临太平洋</p>
+        <p lang="zh-HK">香港现在十分的混乱，但是我们相信它一定能够凭借自身的力量走出来</p>
+        <hr/>
+        <p title="helen">helen学习刻苦值得表扬</p>
+        <p title="jerry">jerry喜欢balabala</p>
+        <p title="jCuckoo">labalaba</p>
+    </body>
+</html>

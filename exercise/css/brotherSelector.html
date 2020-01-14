@@ -2,8 +2,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/css,charset=utf-8"/>
         <title>兄弟选择器</title>
+        <style>
+            /*普通兄弟选择器  紧接在某元素之后的兄弟元素*/
+            h3+p{
+                font-weight:bold;
+            }
+            /*相邻兄弟选择器  指拥有相同父元素的兄弟元素*/
+            h3~p{
+                background-color: #ccc;
+            }
+        </style>
     </head>
     <body>
+        <h3>相邻兄弟选择器</h3>
+        <p>相邻兄弟选择器用加号（+）</p>
+        <hr/>
+        <div>CSS相邻兄弟选择器</div>
+        <p>相邻兄弟结合符</p>
+        <p>可选择紧接在另一元素后的元素，且两者具有相同的父元素</p>
 
+        <h3>hello</h3>
+        <p>world</p>
     </body>
 </html>
